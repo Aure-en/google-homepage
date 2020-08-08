@@ -1,0 +1,567 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+/*Reset*/
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.tablet-content {
+    display: none;
+}
+
+.tablet-content-only {
+    display: none;
+}
+
+/*General media queries*/
+
+@media all and (max-width: 768px) {
+    .desktop-content {
+        display: none;
+    }
+
+    .tablet-content {
+        display: inline;
+    }
+}
+
+
+
+/*Styles*/
+
+    /*General*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgba(0,0,0,0.87);
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0,0,0,0.87);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button,
+input[type="button"] {
+    outline: none;
+}
+
+    /*Header*/
+    
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.header li {
+    margin: 0.9em 0.6em 0.9em;
+}
+
+.header li img {
+    vertical-align: middle;
+    margin: 1em 0.7em;
+    cursor: pointer;
+}
+
+.header li .sign-in {
+    background-color: #3c78dc;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 0.6em 1.1em;
+    font-weight: bold;
+}
+
+@media all and (max-width: 768px) {
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }    
+
+    .tablet-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        width: 250px;
+        height: 100vh;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        transform: translateX(-100%);
+        transition: transform 0.3s linear;
+    }
+
+    .open-nav {
+        transform: translateX(0);
+    }
+
+    .tablet-nav li img {
+        padding-right: 1em;
+    }
+
+    .tablet-nav img[class="google"] {
+        width: 45%;
+        padding-bottom: 1em;
+    }
+
+    .tablet-nav li {
+        padding: 0.8em 0;
+        
+    }
+
+    .tablet-nav a {
+        display: flex;
+        align-items: center;
+        color: rgba(0,0,0,.54);
+        vertical-align: middle;
+    }
+
+    .tablet-nav-cover {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: rgba(0,0,0,0.5)
+    }
+    
+    .header-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 1.2em;
+        font-size: 13px;
+    }
+
+    .header-left img {
+        padding-right: 1em;
+    }
+
+    .header-left a {
+        padding: 1em 0.7em 1em 0.7em;
+    }
+
+    .header-left a:focus {
+        outline: none;
+        color: #4285f4;
+        border-bottom: 2px solid #4285f4;
+    }
+
+    .header li {
+        margin: 0.5em;
+    }
+
+    .header li .sign-in {
+        background-color: #f8f8f8;
+        color: #666;
+        border: 1px solid #c6c6c6;
+    }
+}
+
+    /*Main*/
+
+main {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 13em;
+}
+
+main img.google {
+    padding: 2em;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    width: 582px;
+    height: 47px;
+    border: 1px solid #d1d1d1;
+    border-radius: 35px;
+    position: relative;
+}
+
+@media all and (max-width: 640px) {
+
+    main img.google {
+        max-width: 60vw;
+    }
+    .search-bar {
+        max-width: 90vw;
+    }
+}
+
+.search-bar:hover {
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);
+}
+
+.search-bar input {
+    width: 90%;
+    height: 100%;
+    border: none;
+    font-size: 15px;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+
+main input[type="button"] {
+    padding: 0.7em 1.2em;
+    margin: 2em 0.2em;
+    background-color: #f2f2f2;
+    color: #5F6368;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+main input[type="button"]:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border: 1px solid #c6c6c6;
+    color: black;
+}
+
+main input[type="button"]:focus {
+    border: 1px solid #4d90fe;
+    outline: none;
+}
+
+main p {
+    font-size: 13px;
+}
+
+main a {
+    color: #1a0dab;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+    /*Footer*/
+
+footer .country,
+footer .footbar {
+    display: flex;
+    flex-direction: column;
+    background: #f2f2f2;
+    color: rgba(0,0,0,.54);
+    border: 1px solid #e4e4e4;
+    padding: 0.8em 2.1em;
+    font-size: 15px;
+}
+
+footer .footbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9em 1.1em;
+    border-bottom: none;
+    border-top: none;
+}
+
+footer .footbar a {
+    color: #5f6368;
+    padding: 0.7em 1em;
+    font-size: 14px;
+}
+
+.footbar-left,
+.footbar-right {
+    display: flex;
+}
+
+@media all and (max-width:768px) {
+
+    footer .footbar {
+        flex-direction: column;
+        font-size: 13px;
+    }
+
+    footer .location {
+        flex-direction: row;
+        justify-content: center;
+        display: flex;
+        background: #f2f2f2;
+        color: rgba(0,0,0,.54);
+        border: 1px solid #e4e4e4;
+        padding: 0.8em 2.1em;
+        font-size: 15px;
+    }
+
+    footer strong {
+        font-weight: bold;
+    }
+
+    .footbar-left,
+    .footbar-right,
+    .footbar-middle {
+        padding: 1em 1em;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footbar-right {
+        order: 1;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .footbar-right li:nth-child(3) {
+        order: -1;
+    }
+
+    .footbar-middle {
+        order: 2;
+    }
+
+    .footbar-left {
+        order: 3;
+    }
+
+    main p {
+        margin: 25px;
+    }
+
+    .search-bar {
+        width: 90vw;
+        display: block;
+    }
+
+}
+
+@media all and (max-width: 375px) {
+    footer .location {
+        display: none;
+    }
+}
+
+    /*Google Apps*/
+
+.google-apps {
+    position: fixed;
+    right: 30px;
+    top: 65px;
+    width: 317px;
+    height: 438px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid #c4c4c4;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.30), 0 2px 6px 2px rgba(60,64,67,.15);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 14px;
+    align-items: center;
+    z-index: 1;
+
+}
+
+.google-apps::-webkit-scrollbar {
+    width: 14px;
+}
+
+.google-apps::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 12px 12px #fff;
+    border: solid 3px transparent;
+}
+
+.google-apps::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 12px 12px #dadce0;
+    border: solid 3px transparent;
+    border-radius: 8px;
+    height: 170px;
+}
+
+.google-apps1,
+.google-apps2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    padding: 10px 15px;
+}
+
+.google-apps1 {
+    border-bottom: 1px solid #cacaca;
+}
+
+.google-apps img {
+    margin: 5px;
+}
+
+.google-apps-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    width: 85px;
+    height: 85px;
+    margin: 5px;
+}
+
+.google-apps-icon:hover {
+    text-decoration: none;
+    background-color: #f6fafe;
+}
+
+.google-apps-more {
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 10px 24px;
+    margin: 16px 0 20px 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1a73e8;
+}
+
+.google-apps-more:focus {
+    background-color: #f4f8ff;
+    border-color: #c9ddfc;
+}
+
+.hidden {
+    display: none;
+}
+
+/*Tooltips*/
+
+.tooltip {
+    position: relative;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid black;
+    width: 90px;
+    padding: 7px 8px;
+    font-size: 12px;
+    right: -90px;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0s linear 0.5s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltiptext.black {
+    width: 110px;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    top: 35px;
+    left: -48px;
+    border: 1px solid #fff;
+    font-size: 11px;
+}
+
+.tooltiptext.black:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 8px 8px;
+    border-color: #000 transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: 47px;
+    top: -8px;
+}
+
+
+
+@media all and (max-width: 375px) {
+
+    .search-bar {
+        width: 80vw;
+        
+    }
+
+    
+
+}
